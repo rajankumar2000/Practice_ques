@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int fun(int a,int b,int c,int n){
+    int s;
+    if(n==1)return a;
+    if(n==2)return b;
+    if(n==3)return c;
+    s=fun(a,b,c,n-1)+fun(a,b,c,n-2)+fun(a,b,c,n-3);
+    return s;
+}
+
+int main() {
+	//code
+	int t;
+	cin>>t;
+	while(t--){
+	    int a,b,c,n;
+	    cin>>a>>b>>c>>n;
+	    int k=fun(a,b,c,n);
+	    cout<<k<<endl;
+	}
+	return 0;
+}
