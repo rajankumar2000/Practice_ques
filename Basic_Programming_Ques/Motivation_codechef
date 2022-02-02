@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    ll n,x;
+	    cin>>n>>x;
+	    ll ans=INT_MIN;
+	    for(ll i=0;i<n;i++){
+	        ll sz,rt;
+	        cin>>sz>>rt;
+	        if(sz<=x){
+	            if(rt>ans){
+	                ans=rt;
+	            }
+	        }
+	    }
+	    cout<<ans<<endl;
+	}
+	return 0;
+}
