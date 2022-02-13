@@ -1,0 +1,18 @@
+ public:
+  int dp[10000];
+  int fun(int len,int price[]){
+      if(len==0)return 0;
+      if(dp[len]!=-1)return dp[len];
+      int ans=0;
+      for(int l1=1;l1<=len;l1++){
+          if(len-l1>=0){
+              ans=max(ans,fun(len-l1,price)+price[l1-1]);
+          }
+      }
+      return dp[len]=ans;
+  }
+    int cutRod(int price[], int n) {
+        //code here
+        memset(dp,-1,sizeof(dp));
+        return fun(n,price);
+    }
