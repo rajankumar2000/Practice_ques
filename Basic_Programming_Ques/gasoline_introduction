@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,i;
+	    cin>>n;
+	    int a[n];
+	    for(int i=0;i<n;i++){
+	        cin>>a[i];
+	    }
+	    int gas=a[0],distance=0;
+	    
+	   for(i=1;i<n;i++){
+	       if(gas==0)break;
+	       gas=gas-1+a[i];
+	       distance++;
+	   }
+	   cout<<gas+distance<<endl;
+	}
+	return 0;
+}
