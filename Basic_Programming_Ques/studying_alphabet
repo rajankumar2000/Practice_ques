@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	string s;
+	cin>>s;
+	
+	int n;
+	cin>>n;
+	
+	vector<int> isKnown(26,0);
+	
+	for(char c:s){
+	    isKnown[c-'a']=true;
+	    
+	}
+	while(n--){
+	    string w;
+	    cin>>w;
+	    bool ans=1;
+	    for(char c:w){
+	        if(!isKnown[c-'a'])
+	        ans=false;
+	    }
+	    if(ans)cout<<"Yes"<<endl;
+	    else
+	    cout<<"No"<<endl;
+	}
+	
+	return 0;
+}
