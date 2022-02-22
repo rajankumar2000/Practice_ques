@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main() {
+	ll t;
+	cin>>t;
+	while(t--){
+	    ll n,m;
+	    cin>>n>>m;
+	    ll x,y;
+	    cin>>x>>y;
+	    while(n--){
+	        string s;
+	        cin>>s;
+	        ll cntf=0,cntp=0;
+	        for(ll i=0;i<m;i++){
+	            if(s[i]=='F')cntf++;
+	            if(s[i]=='P')cntp++;
+	        }
+	        if(cntf>=x || (cntf==(x-1) && cntp>=y))cout<<1;
+	        else cout<<0;
+	    }
+	    cout<<endl;
+	    
+	}
+	return 0;
+}
