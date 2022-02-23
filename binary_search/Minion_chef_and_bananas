@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define rep(i,a,n) for(int i=a;i<n;i++)
+using namespace std;
+
+
+
+bool check(int mid, int a[],int h,int n){
+    int x=0;
+    rep(i,0,n){
+        x+=(a[i])/mid;
+        if(a[i]%mid!=0) x++;
+    }
+    return x<=h;
+}
+int main() {
+ll t;
+cin>>t;
+while(t--){
+    
+   
+      int n,H,mx=0;
+        cin >> n>>H;
+        int a[n];
+        for (int i = 0; i < n; i++) {
+        cin >> a[i];mx=max(a[i],mx);
+        }
+        
+       
+        int l=1,h=mx;
+          int ans=h;
+        while(l<=h){
+            int mid=(l+h)/2;
+            if(check(mid,a,H,n)){
+                ans=min(ans,mid);
+                h=mid-1;
+            }
+            else{
+                l=mid+1;
+            }
+        }
+        cout<<ans<<'\n';
+}
+	return 0;
+}
