@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int fst,scn;
+	    cin>>fst>>scn;
+	    
+	    int sum=fst+scn;
+	    int ans=0;
+	    if(sum>=21 || sum<11)
+	    ans=-1;
+	    else{
+	        ans=21-sum;
+	    }
+	    cout<<ans<<endl;
+	}
+	return 0;
+}
+
