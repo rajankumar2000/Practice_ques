@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main() {
+	ll t;
+	cin>>t;
+	while(t--){
+	    ll n;
+	    cin>>n;
+	    ll a[n];
+	    for(int i=0;i<n;i++){
+	        cin>>a[i];
+	    }
+	    vector<ll> v;
+	   
+	    for(ll i=0;i<n;i++){
+	       ll rad=a[i];
+	       auto it=upper_bound(v.begin(),v.end(),rad);
+	       if(it==v.end()){
+	           v.push_back(rad);
+	       }else{
+	           *it=rad;
+	       }
+	    }
+	    cout<<v.size()<<" ";
+	    for(auto i:v){
+	        cout<<i<<" ";
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
