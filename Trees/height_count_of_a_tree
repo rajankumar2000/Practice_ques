@@ -1,0 +1,12 @@
+  public:
+    //Function to find the height of a binary tree.
+    int height(struct Node* node){
+        int x=0,y=0;
+        if(node== NULL) return 0;
+        x=height(node->left);
+        y=height(node->right);
+        if(x>y)return x+1;
+        else
+        return y+1;
+        // code here 
+    }
