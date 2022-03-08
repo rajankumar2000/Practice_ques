@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main() {
+	ll t;
+	cin>>t;
+	while(t--){
+	    ll a,b,cnt=0;;
+	    cin>>a>>b;
+	    
+	    while(__builtin_popcount(a)>1){
+	        a=a/2;
+	        cnt++;
+	    }
+	   while(a>b){
+	       a=a/2;
+	       cnt++;
+	   }
+	   while(a<b){
+	       a=a*2;
+	       cnt++;
+	   }
+	   cout<<cnt<<endl;
+	}
+	return 0;
+}
