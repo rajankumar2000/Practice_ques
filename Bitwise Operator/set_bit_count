@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+ void print_bin(int num)
+  { 
+      for(int i=9;i>=0;i--){
+       int k=num>>i;
+       if(k&1)
+       cout<<1;
+       else
+       cout<<0;
+   }
+   cout<<endl;
+   }
+int main() {
+   int n=10;
+   print_bin(n);
+   int cnt=0;
+for(int i=31;i>=0;i--){
+   if(n&(1<<i))
+   cnt++;
+   
+}
+cout<<cnt<<endl;
+}
