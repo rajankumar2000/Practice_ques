@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+ void print_bin(int num)
+  { 
+      for(int i=9;i>=0;i--){
+       int k=num>>i;
+       if(k&1)
+       cout<<1;
+       else
+       cout<<0;
+   }
+   cout<<endl;
+   }
+int main() {
+   int n=10;
+   //to set a bit
+int a =(n | (1<<2));
+print_bin(a);
+//to unset a bit
+int b=(a & (~(1<<1)));
+print_bin(b);
+}
