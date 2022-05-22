@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ll long long int 
+#define fio ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+using namespace std;
+
+	
+
+int main(){
+	ll v[1001][1001];
+ll n,m;
+  cin>>n>>m;
+  while(m--){
+    ll a,b;
+    cin>>a>>b;
+    v[a][b]=1;
+	v[b][b]=1;
+  }
+  ll q;
+  cin>>q;
+  while(q--){
+    ll c,d;
+    cin>>c>>d;
+    if(v[c][d]==1){
+      cout<<"YES"<<endl;
+    }else
+cout<<"NO"<<endl;
+  }
+
+  
+}
