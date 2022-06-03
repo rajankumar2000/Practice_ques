@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void printLevel(vector<int> vec[],int v,int x){
+	int r;
+	int level[v];
+	bool visited[v];
+
+	queue<int> q;
+
+	q.push(x);
+
+	level[x]=0;
+
+	visited[x]=true;
+
+	while(!q.empty()){
+		 r=q.front();
+
+		q.pop();
+
+		for(int i=0;i<vec[r].size();i++){
+			int s=vec[r][i];
+
+			if(!visited[s]){
+				q.push(s);
+				level[s]=level[r]+1;
+                visited[s]=true;
+
+			}
+		}
+	}
+	for(int i=0;i<v;i++){
+		cout<<i<<" -> "<<level[i]<<endl;
+	}
+}
+int main(){
+	int v=8;
+	vector<int> vec[v];
+	vec[0].push_back(1);
+	vec[0].push_back(2);
+	vec[0].push_back(3);
+	vec[1].push_back(4);
+	vec[1].push_back(5);
+	vec[2].push_back(6);
+	vec[2].push_back(7);
+	vec[3].push_back(7);
+
+printLevel(vec,v,0);
+}
+
+
+
+
+
