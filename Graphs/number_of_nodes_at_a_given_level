@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+#define N 10001
+
+using namespace std;
+
+vector<int> v[N];
+int k=0;
+int level[N];
+bool visited[N];
+
+void bfs(int s,int x){
+	level[s]=1;
+	queue<int> q;
+	q.push(s);
+	visited[s]=true;
+	while(!q.empty()){
+		int r=q.front();
+	    q.pop();
+	    for(int i=0;i<v[r].size();i++){
+	    	if(visited[v[r][i]]==false){
+	    		q.push(v[r][i]);
+	    		visited[v[r][i]]=true;
+	    		level[v[r][i]]=level[r]+1;
+	    		if(level[v[r][i]]==x){
+	    			k++;
+	    		}
+	    	}
+	    }
+	}
+	
+}
+
+
+int main(){
+int n,x,y;
+cin>>n;
+
+for(int i=0;i<n-1;i++){
+cin>>x>>y;
+v[x].push_back(y);
+v[y].push_back(x);
+}
+int b;
+cin>>b;
+
+bfs(1,b);
+cout<<k<<endl;
+}
+
+
+
+
