@@ -1,0 +1,32 @@
+public:
+	//Function to return list containing vertices in Topological order.
+void toposort(int s,stack<int>&st,vector<int> &vis,vector<int> adj[]){
+    vis[s]=1;
+    for(auto x:adj[s]){
+        if(!vis[x]){
+            toposort(x,st,vis,adj);
+        }
+    }
+    st.push(s);
+}
+
+	vector<int> topoSort(int V, vector<int> adj[]) 
+	{
+	    // code here
+	    int n=V;
+	    stack<int> st;
+	    vector<int> vis(n,0);
+	    for(int i=0;i<n;i++){
+	        if(!vis[i]){
+	            toposort(i,st,vis,adj);
+	        }
+	    }
+	    vector<int> ans;
+	    while(!st.empty()){
+	       ans.push_back(st.top());
+	        st.pop();
+	       
+	    }
+	    return ans;
+	}
+//  
