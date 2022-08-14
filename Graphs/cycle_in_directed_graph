@@ -1,0 +1,32 @@
+public:
+    // Function to detect cycle in a directed graph.
+    bool solve(int s,vector<int> &vis,vector<int> &vv,vector<int> adj[]){
+        vis[s]=1;
+        vv[s]=1;
+        bool ans=false;
+        for(auto x:adj[s]){
+            if(vis[x]==0){
+                ans=solve(x,vis,vv,adj);
+                if(ans)return ans;
+            }else if(vis[x]==1 && vv[x]==1){
+                return true;
+            }
+        }
+        vv[s]=0;
+        return ans;
+    }
+    bool isCyclic(int V, vector<int> adj[]) {
+        // code here
+        int n=V;
+        vector<int> vis(n,0);
+        vector<int> vv(n,0);
+        bool iscycle = false;
+        for(int i=0;i<n;i++){
+            if(vis[i]==0){
+                iscycle=solve(i,vis,vv,adj);
+                if(iscycle)return true;
+            }
+            
+        }
+        return iscycle;
+    }
